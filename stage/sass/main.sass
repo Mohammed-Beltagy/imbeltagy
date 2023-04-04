@@ -1,8 +1,41 @@
 @import resets
 @import configs
 
-// ===========
+//  ===================
+//  Sections Navigator:
+//    1. Body Styling
+//    2. Main Styling [Content Container]
+//    3. Header Container [Which Contains Profile Picture]
+ 
+
+// ============
 // Body Styling
 // ============
 body
+  position: relative
   background-color: $bg-color
+  padding: 1rem 0
+
+// ============
+// Main Styling
+// ============
+main 
+  // Scale & Postion
+  width: min(70rem, 95vw)
+  min-height: 70vh // temp
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  // Style
+  background: #0002
+  border-radius: 1rem
+  // Grid
+  display: grid
+  grid-template-rows: 15vh 1fr // temp: 15vh => auto
+
+// ==============
+// Header Styling
+// ==============
+header
+  background-color: #0005

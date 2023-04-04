@@ -29,7 +29,7 @@ gulp.task("redirect-js", () =>
   gulp
     .src("./stage/js/app.js")
     .pipe(uglify())
-    .pipe(gulp.dest("./docs/assets/"))
+    .pipe(gulp.dest("./docs/"))
     .pipe(connect.reload())
 );
 
