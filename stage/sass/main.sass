@@ -3,18 +3,22 @@
 
 //  ===================
 //  Sections Navigator:
-//    1. Body Styling
+//    1. Global Styling
 //    2. Main Styling [Content Container]
-//    3. Header Container [Which Contains Profile Picture]
+//    3. Header Styling [Which Contains Profile Picture]
+//    4. Content Styling [Which Has Slider In]
  
+// ============
+// Global Rules
+// ============
+.img-container img
+  max-width: 100%
 
-// ============
-// Body Styling
-// ============
 body
   position: relative
   background-color: $bg-color
   padding: 1rem 0
+  font-family: $ordinary-font
 
 // ============
 // Main Styling
@@ -32,10 +36,61 @@ main
   border-radius: 1rem
   // Grid
   display: grid
-  grid-template-rows: 15vh 1fr // temp: 15vh => auto
+  grid-template-rows: auto 1fr
+  header, .body
+    padding: 2rem
 
 // ==============
 // Header Styling
 // ==============
 header
   background-color: #0005
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 3rem
+  @include md-screens
+    flex-direction: row
+    padding-top: 1em
+    .picture
+      flex-shrink: 0
+
+  .picture
+    position: relative
+    width: 10rem
+    border-radius: 100%
+    box-shadow: 0 0 0 .6rem #0005, 0 0 0 1.2rem #0005
+    overflow: hidden
+    @include sm-screens
+      width: 100%
+      border-radius: 0
+    &::after
+      content: ""
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: #0003
+      pointer-events: none
+  
+  .text
+    @include sm-screens
+      font-size: 14px
+    span
+      color: lighten($ordinary-color, 25%)
+      font-size: 1.5em
+    h1
+      color: $accent-color
+      font-size: 3em
+      margin-bottom: .2em
+      @include sm-screens
+        font-size: 2.5em
+        margin: .2em 0
+      line-height: 1
+      font-family: $special-font
+      font-weight: 400
+    p
+      color: lighten($ordinary-color, 25%)
+      font-size: 1.2em
+      max-width: calc(20ch * 3 / 1.2)

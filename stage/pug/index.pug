@@ -9,12 +9,24 @@ html(lang="en")
     //- Search Engine Meta
     meta(name="description" content="I'm Beltagy! I can be your front-end developer.")
     meta(name="keywords" content="beltagy, i'm beltagy, imbeltagy, frontend, website, developer")
+    //- Font
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    //- Quantico font
+    link(href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet")
+    //- Russo One font
+    link(href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet")
     //- Style Sheet
     link(rel="stylesheet" href="main.css")
   body
     main
       header
-      section.body
+        .picture.img-container
+          img(src="assets/images/picture.png", alt="Beltagy Picture")
+        .text 
+          span Hello, I'm Beltagy
+          h1 I'm Front-End Developer 
+          p I can transform designs into stunning and responsive web experiences that engage and inspire users.
 
     //- Script
     script(src="app.js") 
