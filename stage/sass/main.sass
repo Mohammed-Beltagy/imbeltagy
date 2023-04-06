@@ -79,7 +79,7 @@ header
     @include sm-screens
       font-size: 14px
     span
-      color: lighten($ordinary-color, 25%)
+      color: $ordinary-color
       font-size: 1.5em
     h1
       color: $accent-color
@@ -92,7 +92,7 @@ header
       font-family: $special-font
       font-weight: 400
     p
-      color: lighten($ordinary-color, 25%)
+      color: $ordinary-color
       font-size: 1.2em
       max-width: calc(20ch * 3 / 1.2)
 
@@ -106,10 +106,10 @@ header
     margin: 0 auto
     .titles
       position: relative
-      max-width: 25ch
+      max-width: 30ch
       overflow: hidden
       &::before
-        content: "hidden"
+        content: "hidden12"
         font-family: $secondary-font
         font-size: 2.5em
         font-weight: 900
@@ -121,11 +121,11 @@ header
         left: 0
         display: flex
         align-items: flex-end
-        padding: 0 1rem
+        padding: 0
         transition: left .5s
         li
-          padding: 0
           text-align: center
+          width: 100%
           font-family: $secondary-font
           font-size: 2.5em
           font-weight: 900
@@ -145,15 +145,28 @@ header
       border-radius: .4em
       cursor: pointer
       &#left-arrow
+        right: 100%
         border-color: transparent transparent $secondary-color $secondary-color
         &.disabled
           opacity: .5
-        right: 100%
+          pointer-events: none
       &#right-arrow
+        left: 100%
         border-color: $secondary-color $secondary-color transparent transparent
         &.disabled
           opacity: .5
-        left: 100%
+          pointer-events: none
+    #sub-title
+      position: absolute
+      top: 100%
+      left: 50%
+      transform: translateX(-50%)
+      white-space: nowrap
+      color: $ordinary-color
+      opacity: .9
+      font-size: 1.1em
+      line-height: .2
+      letter-spacing: .15em
       
   // .content
   //   .projects
