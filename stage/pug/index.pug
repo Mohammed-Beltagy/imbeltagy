@@ -9,13 +9,10 @@ html(lang="en")
     //- Search Engine Meta
     meta(name="description" content="I'm Beltagy! I can be your front-end developer.")
     meta(name="keywords" content="beltagy, i'm beltagy, imbeltagy, frontend, website, developer")
-    //- Font
+    //- Fonts
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-    //- Quantico font
-    link(href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet")
-    //- Russo One font
-    link(href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet")
+    link(href="https://fonts.googleapis.com/css2?family=Cairo:wght@900&family=Quantico&family=Russo+One&display=swap" rel="stylesheet")
     //- Style Sheet
     link(rel="stylesheet" href="main.css")
   body
@@ -27,6 +24,31 @@ html(lang="en")
           span Hello, I'm Beltagy
           h1 I'm Front-End Developer 
           p I can transform designs into stunning and responsive web experiences that engage and inspire users.
+      section.body
+        nav
+          #left-arrow.arrow.disabled
+          div.titles
+            ul.slider
+              li.active(data-subtitle="A Bit Of What I Can Do") Projects
+              li(data-subtitle="About Front-End") Details
+              li(data-subtitle="How To Reach Me") Contact
+          #right-arrow.arrow
+          p.sub-title A Bit Of What I Can Do
+        //- section.content
+        //-   .projects 
+        //-     article.img-container
+        //-       img(src="	https://picsum.photos/1200/800" alt="project Preview")
+        //-       h4.title title
+        //-       p.description Lorem ipsum dolor sit amet.
+        //-     article.img-container
+        //-       img(src="	https://picsum.photos/1200/800" alt="project Preview")
+        //-       h4.title title
+        //-       p.description Lorem ipsum dolor sit amet.
+        //-     article.img-container
+        //-       img(src="	https://picsum.photos/1200/800" alt="project Preview")
+        //-       h4.title title
+        //-       p.description Lorem ipsum dolor sit amet.
+
 
     //- Script
     script(src="app.js") 

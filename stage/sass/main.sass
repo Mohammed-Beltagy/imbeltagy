@@ -34,6 +34,7 @@ main
   // Style
   background: #0002
   border-radius: 1rem
+  overflow: hidden
   // Grid
   display: grid
   grid-template-rows: auto 1fr
@@ -94,3 +95,73 @@ header
       color: lighten($ordinary-color, 25%)
       font-size: 1.2em
       max-width: calc(20ch * 3 / 1.2)
+
+// ============
+// Body Styling
+// ============
+.body
+  nav
+    position: relative
+    width: fit-content
+    margin: 0 auto
+    .titles
+      position: relative
+      max-width: 25ch
+      overflow: hidden
+      &::before
+        content: "hidden"
+        font-family: $secondary-font
+        font-size: 2.5em
+        font-weight: 900
+        pointer-events: none
+        visibility: hidden
+      .slider
+        position: absolute
+        top: 0
+        left: 0
+        display: flex
+        align-items: flex-end
+        padding: 0 1rem
+        transition: left .5s
+        li
+          padding: 0
+          text-align: center
+          font-family: $secondary-font
+          font-size: 2.5em
+          font-weight: 900
+          color: $secondary-color
+          transition: opacity .5s, transform .5s
+          &:not(.active)
+            // font-size: 2em
+            opacity: .5
+            transform: scale(.3)
+    .arrow
+      position: absolute
+      width: 1.3em
+      height: 1.3em
+      top: 1.3em
+      transform: rotate(45deg)
+      border: .3em solid
+      border-radius: .4em
+      cursor: pointer
+      &#left-arrow
+        border-color: transparent transparent $secondary-color $secondary-color
+        &.disabled
+          opacity: .5
+        right: 100%
+      &#right-arrow
+        border-color: $secondary-color $secondary-color transparent transparent
+        &.disabled
+          opacity: .5
+        left: 100%
+      
+  // .content
+  //   .projects
+  //     display: grid
+  //     grid-template-columns: repeat(auto-fill, minmax(10rem, 20rem))
+  //     justify-content: center 
+  //     gap: 1.5rem
+      
+  //     article
+  //       border-radius: .7em
+  //       overflow: hidden
