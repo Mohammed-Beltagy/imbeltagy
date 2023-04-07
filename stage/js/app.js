@@ -4,10 +4,11 @@ function repositionMain() {
   let mainHeight = parseFloat(
     getComputedStyle(main).getPropertyValue("height")
   );
-  if (mainHeight >= innerHeight - 16) {
+  if (mainHeight >= innerHeight - 50) {
     main.style.cssText = `
       top: 0;
       transform: translateX(-50%);
+      margin: 1rem 0
     `;
   } else {
     main.style.cssText = `
@@ -16,8 +17,8 @@ function repositionMain() {
     `;
   }
 }
-window.onload = repositionMain();
-window.onresize = repositionMain();
+window.onload = repositionMain;
+window.onresize = repositionMain;
 
 // Make Slider For The Titles
 const titlesSlider = document.querySelector(".titles .slider"),
@@ -33,6 +34,7 @@ leftArrow.onclick = function () {
   }
   moveTitles();
   changeSubtitle();
+  slideContent();
   rightArrow.classList.remove("disabled");
   active <= 0
     ? this.classList.add("disabled")
@@ -45,6 +47,7 @@ rightArrow.onclick = function () {
   }
   moveTitles();
   changeSubtitle();
+  slideContent();
   leftArrow.classList.remove("disabled");
   active >= 2
     ? this.classList.add("disabled")
@@ -84,5 +87,13 @@ function changeSubtitle() {
     } else {
       clearInterval(subtitleInterval);
     }
-  }, 150);
+  }, 100);
 }
+
+// Change The Slide Of The Content Depending On (active) value
+function slideContent() {
+  console.log(document.getElementById("content-slider"));
+  document.getElementById("content-slider").style.left = `-${active}00%`;
+}
+
+// Give #content-slider height by making longestChild.position = relative

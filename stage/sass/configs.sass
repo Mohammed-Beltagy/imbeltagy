@@ -8,9 +8,12 @@ $secondary-font: 'Cairo', sans-serif
 $ordinary-font: 'Quantico', sans-serif
 
 // Breakpoints
+@mixin lg-screens
+  @media (min-width: 60rem)
+    @content
 @mixin md-screens
   @media (min-width: 40rem)
     @content
 @mixin sm-screens
-  @media (max-width: 39.9rem)
+  @media (min-width: 20rem)
     @content
