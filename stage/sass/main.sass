@@ -58,7 +58,7 @@ main
   header
     padding: 2rem
   .body, .slide
-    padding: 1rem
+    padding: 0.5rem
 
 // ==============
 // Header Styling
@@ -206,10 +206,7 @@ header
     .projects
       display: grid
       gap: 1rem
-      // justify-content: center
-      grid-template-columns: repeat(auto-fill, minmax(10em, 1fr))
-      @include sm-screens
-        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr))
+      grid-template-columns: 1fr
       @include md-screens
         grid-template-columns: repeat(auto-fill, minmax(15em, 1fr))
       @include lg-screens
