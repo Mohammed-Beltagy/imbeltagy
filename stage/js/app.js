@@ -1,3 +1,7 @@
+// ============
+// Main Position
+// ============
+
 // Change Main Postion If Its Height Is More Than Window Height
 const main = document.querySelector("main");
 function repositionMain() {
@@ -19,6 +23,10 @@ function repositionMain() {
 }
 window.onload = repositionMain;
 window.onresize = repositionMain;
+
+// ======
+// Slider
+// ======
 
 // Make Slider For The Titles
 const titlesSlider = document.querySelector(".titles .slider"),
@@ -96,4 +104,48 @@ function slideContent() {
   document.getElementById("content-slider").style.left = `-${active}00%`;
 }
 
-// Give #content-slider height by making longestChild.position = relative
+// ============
+// Change Theme
+// ============
+
+let theme = "dark";
+document.getElementById("change-theme").onclick = function () {
+  theme === "dark" ? (theme = "light") : (theme = "dark");
+  applyTheme();
+};
+function applyTheme() {
+  if (theme === "dark") {
+    document.documentElement.style.setProperty("--bg-color", "#3D4490");
+    document.documentElement.style.setProperty("--overlay-color", "#0002");
+    document.documentElement.style.setProperty("--high-overlay-color", "#0005");
+    document.documentElement.style.setProperty(
+      "--picture-overlay-color",
+      "var(--high-overlay-color)"
+    );
+    document.documentElement.style.setProperty(
+      "--project-overlay-color",
+      "#3d449080"
+    );
+    document.documentElement.style.setProperty("--accent-color", "#FF5677");
+    document.documentElement.style.setProperty("--ordinary-color", "#d9e6ff");
+    document.documentElement.style.setProperty("--secondary-color", "#a4a7ff");
+  } else {
+    document.documentElement.style.setProperty("--bg-color", "#bde0fe");
+    document.documentElement.style.setProperty("--overlay-color", "#fff6");
+    document.documentElement.style.setProperty("--high-overlay-color", "#fff8");
+    document.documentElement.style.setProperty(
+      "--picture-overlay-color",
+      "#5e96f533"
+    );
+    document.documentElement.style.setProperty(
+      "--project-overlay-color",
+      "var(--high-overlay-color)"
+    );
+    document.documentElement.style.setProperty("--accent-color", "#5e96f5");
+    document.documentElement.style.setProperty("--ordinary-color", "#3b4a65");
+    document.documentElement.style.setProperty(
+      "--secondary-color",
+      "var(--ordinary-color)"
+    );
+  }
+}
