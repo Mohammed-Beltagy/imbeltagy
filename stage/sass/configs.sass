@@ -1,4 +1,4 @@
-:root 
+body
   // Background Colors
   --bg-color: #3D4490
   --overlay-color: #0002
@@ -9,6 +9,17 @@
   --accent-color: #FF5677
   --ordinary-color: #d9e6ff
   --secondary-color: #a4a7ff
+  &.light
+    // Background Colors
+    --bg-color: #bde0fe
+    --overlay-color: #fff3
+    --high-overlay-color: #fff5
+    --picture-overlay-color: #5e96f533
+    --project-overlay-color: var(--high-overlay-color)
+    // Text Colors
+    --accent-color: #5e96f5
+    --ordinary-color: #3b4a65
+    --secondary-color: var(--ordinary-color)
   
 // Background Colors
 $bg-color: var(--bg-color)

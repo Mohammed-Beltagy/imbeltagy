@@ -35,7 +35,10 @@ gulp.task("redirect-js", () =>
 
 // Redirect Images
 gulp.task("redirect-images", () =>
-  gulp.src("./stage/images/**/*.*").pipe(gulp.dest("./docs/assets/images/"))
+  gulp
+    .src("./stage/images/**/*.*")
+    .pipe(gulp.dest("./docs/assets/images/"))
+    .pipe(connect.reload())
 );
 
 // Start Server & Watch Changes
