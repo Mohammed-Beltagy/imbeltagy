@@ -100,17 +100,19 @@ function changeSubtitle() {
 
 // Change The Slide Of The Content Depending On (active) value
 function slideContent() {
-  console.log(document.getElementById("content-slider"));
   document.getElementById("content-slider").style.left = `-${active}00%`;
 }
 
 // ============
 // Change Theme
 // ============
-document.getElementById("change-theme").onclick = function () {
-  if (document.body.classList.contains("light")) {
+function changeTheme() {
+  if (localStorage.getItem("theme") === "light") {
+    localStorage.setItem("theme", "dark");
     document.body.classList.remove("light");
   } else {
+    localStorage.setItem("theme", "light");
     document.body.classList.add("light");
   }
-};
+}
+document.getElementById("change-theme").onclick = changeTheme;

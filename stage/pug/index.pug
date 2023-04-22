@@ -4,8 +4,10 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    //- Fav Icon
+    link(rel='icon', href='assets/images/icon.svg')
     //- title
-    title I'm Beltagy
+    title Beltagy
     //- Search Engine Meta
     meta(name="description" content="I'm Beltagy! I can be your front-end developer.")
     meta(name="keywords" content="beltagy, i'm beltagy, imbeltagy, frontend, website, developer")
@@ -35,7 +37,7 @@ html(lang="en")
           div.titles
             ul.slider
               li.active(data-subtitle="A Bit Of What I Can Do.") Projects
-              li(data-subtitle="About Front-End.") Details
+              li(data-subtitle="More than HTML, CSS & JS") Skills
               li(data-subtitle="How To Reach Me.") Contact
           #right-arrow.arrow
           p#sub-title A Bit Of What I Can Do.
@@ -57,25 +59,17 @@ html(lang="en")
               .text
                 h4.title title
                 p.description Lorem ipsum dolor sit amet.
-            a(href="#" target="_blank").img-container
-              img(src="	https://picsum.photos/1200/800" alt="project Preview")
-              .text
-                h4.title title
-                p.description Lorem ipsum dolor sit amet.
-            a(href="#" target="_blank").img-container
-              img(src="	https://picsum.photos/1200/800" alt="project Preview")
-              .text
-                h4.title title
-                p.description Lorem ipsum dolor sit amet.
-            a(href="#" target="_blank").img-container
-              img(src="	https://picsum.photos/1200/800" alt="project Preview")
-              .text
-                h4.title title
-                p.description Lorem ipsum dolor sit amet.
 
           .slide.details
-            | details
-
+            article
+              h3 Pug & Sass
+              p Using Pug and Sass makes it easy to write clean, maintainable, and efficient code. These technologies offer features like mixins, variables, and includes that help to streamline development and ensure a consistent visual style throughout a project.
+            article
+              h3 Gulp.js
+              p Gulp.js is a powerful tool that can help shorten development time by automatically adding prefixes and compressing files. This means more quality and less time spent on repetitive tasks.
+            article
+              h3 Git & Github
+              p With Git and Github, I can easily track changes to code and collaborate with other developers. These technologies also allow me to revert to previous versions of code if needed, ensuring that your project stays on track and error-free.
           .slide.about
             | about
 

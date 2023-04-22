@@ -31,14 +31,14 @@ body
   position: fixed
   z-index: 5
   top: 1em
-  right: 0
+  right: 1em
   width: 3.5em
   @include md-screens
-    width: 4.5em
+    width: 4em
   aspect-ratio: 1 / 1
   background-color: $ordinary-color
   border: .3em solid #5e96f5
-  border-right: none
+  border-radius: 100%
   cursor: pointer
   user-select: none
 
@@ -206,7 +206,8 @@ header
 
     .slide
       width: 33.33333%
-
+    
+    // Slide 1
     .projects
       display: grid
       gap: 1rem
@@ -245,3 +246,15 @@ header
             font-weight: 700
             text-transform: uppercase
             font-size: 1.5em
+    
+    // Slide 2
+    .details
+      padding-inline: 1rem
+      color: $ordinary-color
+      @include lg-screens
+        column-count: 3
+      text-align: justify
+      text-justify: inter-word
+
+      article + article
+        margin-top: 1rem
