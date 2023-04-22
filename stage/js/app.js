@@ -11,18 +11,20 @@ function repositionMain() {
   if (mainHeight >= innerHeight - 50) {
     main.style.cssText = `
       top: 0;
-      transform: translateX(-50%);
       margin: 1rem 0
     `;
   } else {
+    let height = parseFloat(getComputedStyle(main).getPropertyValue("height"));
     main.style.cssText = `
-      top: 50%
-      transform: translate(-50%, -50%)
+      top: ${(innerHeight - height) / 2}px
     `;
   }
 }
 window.onload = repositionMain;
-window.onresize = repositionMain;
+window.addEventListener("resize", repositionMain);
+Array.from(document.getElementsByTagName("img")).forEach((img) => {
+  img.addEventListener("load", repositionMain);
+});
 
 // ======
 // Slider
@@ -100,10 +102,18 @@ function changeSubtitle() {
 
 // Change The Slide Of The Content Depending On (active) value
 const contentSlider = document.getElementById("content-slider");
-// Give Value To (contentSlider) (max-height) To Apply The Transition Later
-contentSlider.style.maxHeight = getComputedStyle(
-  contentSlider.children[active]
-).getPropertyValue("height");
+// Give (contentSlider) the height of active slide
+function setHeight() {
+  contentSlider.style.maxHeight = getComputedStyle(
+    contentSlider.children[active]
+  ).getPropertyValue("height");
+  setTimeout(repositionMain, 400);
+}
+setHeight();
+window.addEventListener("resize", setHeight);
+Array.from(document.getElementsByTagName("img")).forEach((img) => {
+  img.onload = setHeight;
+});
 
 function slideContent() {
   contentSlider.style.maxHeight = 0;
@@ -112,10 +122,7 @@ function slideContent() {
       (slide) => (slide.style.display = "none")
     );
     contentSlider.children[active].style.display = "block";
-
-    contentSlider.style.maxHeight = getComputedStyle(
-      contentSlider.children[active]
-    ).getPropertyValue("height");
+    setHeight();
   }, 400);
 }
 
