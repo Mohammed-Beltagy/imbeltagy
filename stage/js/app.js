@@ -106,13 +106,20 @@ function slideContent() {
 // ============
 // Change Theme
 // ============
+function applyTheme() {
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light");
+  } else {
+    document.body.classList.remove("light");
+  }
+}
 function changeTheme() {
   if (localStorage.getItem("theme") === "light") {
     localStorage.setItem("theme", "dark");
-    document.body.classList.remove("light");
   } else {
     localStorage.setItem("theme", "light");
-    document.body.classList.add("light");
   }
+  applyTheme();
 }
 document.getElementById("change-theme").onclick = changeTheme;
+applyTheme();
