@@ -38,27 +38,28 @@ html(lang="en")
             ul.slider
               li.active(data-subtitle="A Bit Of What I Can Do.") Projects
               li(data-subtitle="More than HTML, CSS & JS") Skills
-              li(data-subtitle="How To Reach Me.") Contact
+              //- li(data-subtitle="How To Reach Me.") Contact
           #right-arrow.arrow
           p#sub-title A Bit Of What I Can Do.
         
         section#content-slider.content
           .slide.projects 
-            a(href="https://mohammed-beltagy.github.io/Multi-Step-Form/" target="_blank").img-container
-              img(src="https://raw.githubusercontent.com/Mohammed-Beltagy/Multi-Step-Form/main/assets/screenshot.jpg" alt="project Preview")
-              .text
-                h4.title multi step form
-                p.description Lorem ipsum dolor sit amet.
-            a(href="https://mohammed-beltagy.github.io/Tetris_Game/" target="_blank").img-container
-              img(src="https://raw.githubusercontent.com/Mohammed-Beltagy/Tetris_Game/main/screenshot.png" alt="project Preview")
-              .text
-                h4.title tetris
-                p.description Lorem ipsum dolor sit amet.
-            a(href="#" target="_blank").img-container
-              img(src="	https://picsum.photos/1200/800" alt="project Preview")
-              .text
-                h4.title title
-                p.description Lorem ipsum dolor sit amet.
+            .grid
+              a(href="https://mohammed-beltagy.github.io/Multi-Step-Form/" target="_blank").img-container
+                img(src="https://raw.githubusercontent.com/Mohammed-Beltagy/Multi-Step-Form/main/assets/screenshot.jpg" alt="project Preview")
+                .text
+                  h4.title multi step form
+                  p.description Lorem ipsum dolor sit amet.
+              a(href="https://mohammed-beltagy.github.io/Tetris_Game/" target="_blank").img-container
+                img(src="https://raw.githubusercontent.com/Mohammed-Beltagy/Tetris_Game/main/screenshot.png" alt="project Preview")
+                .text
+                  h4.title tetris
+                  p.description Lorem ipsum dolor sit amet.
+              a(href="#" target="_blank").img-container
+                img(src="	https://picsum.photos/1200/800" alt="project Preview")
+                .text
+                  h4.title title
+                  p.description Lorem ipsum dolor sit amet.
 
           .slide.details
             article
@@ -70,8 +71,9 @@ html(lang="en")
             article
               h3 Git & Github
               p With Git and Github, I can easily track changes to code and collaborate with other developers. These technologies also allow me to revert to previous versions of code if needed, ensuring that your project stays on track and error-free.
-          .slide.about
-            | about
+          //- .slide.contact
+          //-   section
+          //-     input#email(type="email", name="email", to="mailto")
 
 
     //- Script

@@ -50,14 +50,14 @@ leftArrow.onclick = function () {
 };
 // right arrow
 rightArrow.onclick = function () {
-  if (active < 2) {
+  if (active < 1) {
     active++;
   }
   moveTitles();
   changeSubtitle();
   slideContent();
   leftArrow.classList.remove("disabled");
-  active >= 2
+  active >= 1
     ? this.classList.add("disabled")
     : this.classList.remove("disabled");
 };
@@ -99,8 +99,24 @@ function changeSubtitle() {
 }
 
 // Change The Slide Of The Content Depending On (active) value
+const contentSlider = document.getElementById("content-slider");
+// Give Value To (contentSlider) (max-height) To Apply The Transition Later
+contentSlider.style.maxHeight = getComputedStyle(
+  contentSlider.children[active]
+).getPropertyValue("height");
+
 function slideContent() {
-  document.getElementById("content-slider").style.left = `-${active}00%`;
+  contentSlider.style.maxHeight = 0;
+  setTimeout(() => {
+    Array.from(contentSlider.children).forEach(
+      (slide) => (slide.style.display = "none")
+    );
+    contentSlider.children[active].style.display = "block";
+
+    contentSlider.style.maxHeight = getComputedStyle(
+      contentSlider.children[active]
+    ).getPropertyValue("height");
+  }, 400);
 }
 
 // ============
@@ -123,3 +139,7 @@ function changeTheme() {
 }
 document.getElementById("change-theme").onclick = changeTheme;
 applyTheme();
+
+// ==========
+// Send Email
+// ==========

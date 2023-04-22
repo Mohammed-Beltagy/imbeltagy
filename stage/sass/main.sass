@@ -131,7 +131,7 @@ header
   nav
     position: relative
     width: fit-content
-    margin: 0 auto
+    margin: 0 auto 3rem
     .titles
       position: relative
       max-width: 30ch
@@ -150,7 +150,7 @@ header
         display: flex
         align-items: flex-end
         padding: 0
-        transition: left .5s
+        transition: left .8s
         li
           text-align: center
           width: 100%
@@ -158,7 +158,7 @@ header
           font-size: 2.5em
           font-weight: 900
           color: $secondary-color
-          transition: opacity .5s, transform .5s
+          transition: opacity .8s, transform .8s
           &:not(.active)
             // font-size: 2em
             opacity: .5
@@ -197,58 +197,57 @@ header
       letter-spacing: .15em
       
   .content
-    display: flex
-    width: 300%
+    width: 100%
     position: relative
-    padding-top: 3rem
     left: 0
-    transition: left .5s
+    transition: max-height .4s ease-in-out
 
-    .slide
-      width: 33.33333%
-    
     // Slide 1
     .projects
-      display: grid
-      gap: 1rem
-      grid-template-columns: 1fr
-      @include md-screens
-        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr))
-      @include lg-screens
-        grid-template-columns: repeat(auto-fill, minmax(17em, 1fr))
-      
-      a
-        display: block
-        position: relative
-        border-radius: .7em
-        overflow: hidden
-        cursor: pointer
-        &:hover
-          img
-            transform: scale(1.2)
-          .text
-            top: 0
+      .grid
+        display: grid
+        gap: 1rem
+        grid-template-columns: 1fr
+        align-content: start
+        @include md-screens
+          grid-template-columns: repeat(auto-fill, minmax(15em, 1fr))
+        @include lg-screens
+          grid-template-columns: repeat(auto-fill, minmax(17em, 1fr))
         
-        img
-          transition: transform .5s
+        a
+          display: block
+          position: relative
+          border-radius: .7em
+          overflow: hidden
+          cursor: pointer
+          height: fit-content
+          &:hover
+            img
+              transform: scale(1.2)
+            .text
+              top: 0
+          
+          img
+            transition: transform .5s
 
-        .text
-          position: absolute
-          width: 100%
-          height: 100%
-          top: calc(100% - 3.5em)
-          padding: 1em
-          transition: top .5s
-          color: $ordinary-color
-          background: $project-overlay-color
+          .text
+            position: absolute
+            width: 100%
+            height: 100%
+            top: calc(100% - 3.5em)
+            padding: 1em
+            transition: top .5s
+            color: $ordinary-color
+            background: $project-overlay-color
 
-          h4
-            font-weight: 700
-            text-transform: uppercase
-            font-size: 1.5em
+            h4
+              font-weight: 700
+              text-transform: uppercase
+              font-size: 1.5em
     
     // Slide 2
     .details
+      display: none
       padding-inline: 1rem
       color: $ordinary-color
       @include lg-screens
@@ -258,3 +257,5 @@ header
 
       article + article
         margin-top: 1rem
+    
+    // Slide 3
