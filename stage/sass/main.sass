@@ -15,6 +15,7 @@
   max-width: 100%
 
 body
+  padding: 2.5vw
   position: relative
   background-color: $bg-color
   background-image: linear-gradient(to top left, #21286e, #5b2d99)
@@ -46,7 +47,9 @@ body
 // ============
 main 
   // Scale & Postion
-  width: min(70rem, 95vw)
+  width: min(70rem, 100%)
+  @include md-screens
+    width: min(70rem, calc(100% - 5vw))
   position: absolute
   transition: top .3s
   left: 50%
@@ -77,6 +80,9 @@ header
     padding-top: 1em
     .picture
       flex-shrink: 0
+    .icons
+      flex-shrink: 0
+      margin-left: auto
 
   .picture
     position: relative
@@ -120,6 +126,41 @@ header
       color: $ordinary-color
       font-size: 1.2em
       max-width: calc(20ch * 3 / 1.2)
+  .icons
+    display: flex
+    align-items: center
+    gap: 1em
+    @include md-screens
+      gap: .1em
+      flex-direction: column
+
+    a
+      position: relative
+      display: block
+      color: $icons-color
+      font-size: min(2em, 10vw)
+      @include md-screens
+        font-size: 1.3em
+      @include lg-screens
+        font-size: 1.5em
+      
+      &::before
+        content: attr(data-content)
+        position: absolute
+        inset: auto auto 120% 50%
+        transform: translateX(-50%)
+        @include md-screens
+          inset: 50% 120% auto auto
+          transform: translateY(-50%)
+        color: $accent-color
+        background-color: $ordinary-color
+        padding: .3em
+        overflow: hidden
+        display: none
+        font-size: .7em
+        white-space: nowrap
+      &:hover::before
+        display: block
 
 // ============
 // Body Styling
@@ -279,5 +320,3 @@ header
 
       article + article
         margin-top: 1rem
-    
-    // Slide 3

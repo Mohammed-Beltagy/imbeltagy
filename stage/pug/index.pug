@@ -15,6 +15,8 @@ html(lang="en")
     link(rel="preconnect" href="https://fonts.googleapis.com")
     link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
     link(href="https://fonts.googleapis.com/css2?family=Cairo:wght@900&family=Quantico&family=Russo+One&display=swap" rel="stylesheet")
+    //- Include Font Awesome CSS
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css")
     //- Style Sheet
     link(rel="stylesheet" href="main.css")
   body
@@ -27,8 +29,19 @@ html(lang="en")
           img(src="assets/images/picture.png", alt="Beltagy Picture")
         .text 
           span Hello, I'm Beltagy
-          h1 I'm Front-End Developer 
+          h1 I'm Front-End Developer
           p I can transform designs into stunning and responsive web experiences that engage and inspire users.
+        .icons
+          a(href='mailto:imbeltagy@gmail.com' data-content="imbeltagy@gmail.com")
+            i.far.fa-envelope
+          a(href='https://www.instagram.com/im.beltagy/' data-content="@im.beltagy" target="_blank")
+            i.fab.fa-instagram
+          a(href='https://wa.me/01027797554' data-content="+20 1027797554" target="_blank")
+            i.fab.fa-whatsapp
+          a(href='https://www.linkedin.com/in/mohammed-beltagy-4311b725b/' data-content="Mohammed Beltagy" target="_blank")
+            i.fab.fa-linkedin
+          a(href='https://codepen.io/Mohammed-Beltagy' data-content="@Mohammed-Beltagy" target="_blank")
+            i.fab.fa-codepen
       
       section.body
 
@@ -38,7 +51,6 @@ html(lang="en")
             ul.slider
               li.active(data-subtitle="A Bit Of What I Can Do.") Projects
               li(data-subtitle="More than HTML, CSS & JS") Skills
-              //- li(data-subtitle="How To Reach Me.") Contact
           #right-arrow.arrow
           p#sub-title A Bit Of What I Can Do.
         
@@ -70,9 +82,6 @@ html(lang="en")
             article
               h3 Git & Github
               p With Git and Github, I can easily track changes to code and collaborate with other developers. These technologies also allow me to revert to previous versions of code if needed, ensuring that your project stays on track and error-free.
-          //- .slide.contact
-          //-   section
-          //-     input#email(type="email", name="email", to="mailto")
 
 
     //- Script

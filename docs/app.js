@@ -1,7 +1,6 @@
 const main=document.querySelector("main");function repositionMain(){var e;parseFloat(getComputedStyle(main).getPropertyValue("height"))>=innerHeight-50?main.style.cssText=`
       position: static;
       transform: translateX(0);
-      margin: 2.5vw auto
     `:(e=parseFloat(getComputedStyle(main).getPropertyValue("height")),main.style.cssText=`
       position: absolute;
       top: ${(innerHeight-e)/2}px;

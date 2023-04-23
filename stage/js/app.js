@@ -12,7 +12,6 @@ function repositionMain() {
     main.style.cssText = `
       position: static;
       transform: translateX(0);
-      margin: 2.5vw auto
     `;
   } else {
     let height = parseFloat(getComputedStyle(main).getPropertyValue("height"));
