@@ -10,13 +10,16 @@ function repositionMain() {
   );
   if (mainHeight >= innerHeight - 50) {
     main.style.cssText = `
-      top: 0;
-      margin: 1rem 0
+      position: static;
+      transform: translateX(0);
+      margin: 2.5vw auto
     `;
   } else {
     let height = parseFloat(getComputedStyle(main).getPropertyValue("height"));
     main.style.cssText = `
-      top: ${(innerHeight - height) / 2}px
+      position: absolute;
+      top: ${(innerHeight - height) / 2}px;
+      transform: translateX(-50%);
     `;
   }
 }

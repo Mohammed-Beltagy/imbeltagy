@@ -21,7 +21,6 @@ body
   &.light
     background-image: linear-gradient(to top left, #bde0fe, #dac4ec)
   background-attachment: fixed
-  padding: 1rem 0
   font-family: $ordinary-font
 
 // ====================
@@ -221,6 +220,14 @@ header
           overflow: hidden
           cursor: pointer
           height: fit-content
+          // center the third (a) while it in the second row
+          &:last-child
+            @include md-screens
+              grid-column: 1 / -1
+              margin-inline: 25%
+            @media (min-width: 51.625rem)
+              grid-column: auto
+              margin-inline: 0
           &:hover
             img
               transform: scale(1.2)
