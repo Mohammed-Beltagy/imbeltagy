@@ -124,7 +124,7 @@ function slideContent() {
     Array.from(contentSlider.children).forEach(
       (slide) => (slide.style.display = "none")
     );
-    contentSlider.children[active].style.display = "block";
+    contentSlider.children[active].style.display = "grid";
     setHeight();
   }, 400);
 }

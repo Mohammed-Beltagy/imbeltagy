@@ -203,64 +203,79 @@ header
 
     // Slide 1
     .projects
-      .grid
-        display: grid
-        gap: 1rem
-        grid-template-columns: 1fr
-        align-content: start
-        @include md-screens
-          grid-template-columns: repeat(auto-fill, minmax(15em, 1fr))
-        @include lg-screens
-          grid-template-columns: repeat(auto-fill, minmax(17em, 1fr))
-        
-        a
-          display: block
-          position: relative
-          border-radius: .7em
-          overflow: hidden
-          cursor: pointer
-          height: fit-content
-          // center the third (a) while it in the second row
-          &:last-child
-            @include md-screens
-              grid-column: 1 / -1
-              margin-inline: 25%
-            @media (min-width: 51.625rem)
-              grid-column: auto
-              margin-inline: 0
-          &:hover
-            img
-              transform: scale(1.2)
-            .text
-              top: 0
-          
+      display: grid
+      gap: 1rem
+      grid-template-columns: 1fr
+      align-content: start
+      @include md-screens
+        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr))
+      @include lg-screens
+        grid-template-columns: repeat(auto-fill, minmax(17em, 1fr))
+      
+      a
+        display: block
+        position: relative
+        border-radius: .7em
+        overflow: hidden
+        cursor: pointer
+        height: fit-content
+        // center the third (a) while it in the second row
+        &:last-child
+          @include md-screens
+            grid-column: 1 / -1
+            margin-inline: 25%
+          @media (min-width: 51.625rem)
+            grid-column: auto
+            margin-inline: 0
+        &:hover
           img
-            transition: transform .5s
-
+            transform: scale(1.2)
           .text
-            position: absolute
-            width: 100%
-            height: 100%
-            top: calc(100% - 3.5em)
-            padding: 1em
-            transition: top .5s
-            color: $ordinary-color
-            background: $project-overlay-color
+            top: 0
+        
+        img
+          transition: transform .5s
 
-            h4
-              font-weight: 700
-              text-transform: uppercase
-              font-size: 1.5em
+        .text
+          position: absolute
+          width: 100%
+          height: 100%
+          top: calc(100% - 3.5em)
+          padding: 1em
+          transition: top .5s
+          color: $ordinary-color
+          background: $project-overlay-color
+
+          h4
+            font-weight: 700
+            text-transform: uppercase
+            font-size: 1.5em
     
     // Slide 2
     .details
       display: none
+      gap: 1rem
+      grid-template-columns: 1fr
+      align-content: start
+      @include md-screens
+        grid-template-columns: repeat(auto-fill, minmax(15em, 1fr))
+      @include lg-screens
+        grid-template-columns: repeat(auto-fill, minmax(17em, 1fr))
       padding-inline: 1rem
       color: $ordinary-color
       @include lg-screens
         column-count: 3
       text-align: justify
       text-justify: inter-word
+      
+      // center the third (article) while it in the second row
+      article:last-child
+        @include md-screens
+          grid-column: 1 / -1
+          // margin-inline: 25%
+        @media (min-width: 51.625rem)
+          grid-column: auto
+          margin-inline: 0
 
       article + article
         margin-top: 1rem
